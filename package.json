@@ -1,0 +1,27 @@
+{
+  "name": "reacttraining",
+  "version": "1.0.0",
+  "description": "A learning exercise with react, babel, webpack and axios",
+  "main": "webpack.config.js",
+  "scripts": {
+    "production": "webpack -p",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [
+    "training",
+    "react"
+  ],
+  "author": "Lenny Peters <lenny@lennypeters.com> (https://lennypeters.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-react": "^6.16.0",
+    "html-webpack-plugin": "^2.26.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
+}
