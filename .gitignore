@@ -1,0 +1,24 @@
+archive
+node_modules
+
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+#User specific stuff
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+
+# Logs
+logs
+*.log
+npm-debug.log*
+protractor.results.json*
+
+#Build Folder
+dist/
+
+#Coverage reporting
+coverage/*
