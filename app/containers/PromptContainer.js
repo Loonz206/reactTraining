@@ -1,21 +1,24 @@
 var React = require('react');
-var transparentBg = require('../styles').transparentBg;
+var Prompt = require('../components/Prompt');
+
+// Totally understood to create the logic and UI for the view in the container however after a working view with logic is
+// establish further separate the UI from the logic by moving the UI into a component away from the logic and pass the values into it.
 
 var PromptContainer = React.createClass({
-   contextTypes: {
-       router: React.PropTypes.object.isRequired
-   },
-   getInitialState: function () {
-     return {
-         username:''
-     }
-   },
-   onUpdateUser: function (e) {
-       this.setState({
-           username: e.target.value
-       })
-   },
-    onSubmitUser: function (e) {
+    contextTypes: {
+        router: React.PropTypes.object.isRequired
+    },
+    getInitialState: function () {
+        return {
+            username: ''
+        }
+    },
+    handleUpdateUser: function (e) {
+        this.setState({
+            username: e.target.value
+        })
+    },
+    handleSubmitUser: function (e) {
         e.preventDefault();
         var username = this.state.username;
         this.setState({
@@ -32,35 +35,21 @@ var PromptContainer = React.createClass({
                     playerTwo: this.state.username
                 }
             })
-        }else {
+        } else {
             //go to /playerTwo
             console.log(this.context);
             this.context.router.push('/playerTwo/' + this.state.username)
         }
     },
-   render: function () {
+    render: function () {
         return (
-            <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>
-                <h1>{this.props.route.header}</h1>
-                <div className="col-sm-12">
-                    <form onSubmit={this.onSubmitUser}>
-                        <div className="form-group">
-                            <input type="text"
-                                   className="form-control"
-                                   onChange={this.onUpdateUser}
-                                   value={this.state.username}
-                                   placeholder="Github Username"/>
-                        </div>
-                        <div className="form-group col-sm-4 col-sm-offset-4">
-                            <button className="btn btn-block btn-success" type="submit">
-                                Continue
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <Prompt
+                onSubmitUser={this.handleSubmitUser}
+                onUpdateUser={this.handleUpdateUser}
+                header={this.props.route.header}
+                username={this.state.username}/>
         )
-   }
+    }
 });
 
 module.exports = PromptContainer;
