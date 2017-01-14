@@ -9,7 +9,7 @@ _some of the things you might have to do_
 * Set up any listeners (ie Websockets or Firebase listeners)
 * Remove any listeners you initally set up (when unmounted)
 
-_What I want you to do is really think about the problem we're trying to solve. If you're good and you understand it, continue on. If not, re-read the section above. Looking at code won't help you too much if you don't understand the underlying issues we're trying to solve._
+_Think about what is trying to be solved in each of the examples laid out below. Refer to common needs in application building._
 
 ###Establish some default props in our component:
    
