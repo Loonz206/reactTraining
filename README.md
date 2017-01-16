@@ -1,4 +1,13 @@
-##These are some notes I am taking from this tutorial so I have this in context.
+#These are some notes I am taking from this tutorial so I have this in context.
+
+##Some structure to keep in mind
+
+###Separating folders into components, containers, config
+
+Components are the base UI that are called from Containers, Containers can hold the underlying logic of a view and Components render the view.
+Config is meant for routing and keeping routing logic intact. 
+
+##Life Cycle of React
 
 ###The key of getting the React Lifecycle into perspective.
 _some of the things you might have to do_
