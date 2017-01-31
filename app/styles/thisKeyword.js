@@ -39,6 +39,36 @@ var fastFood = ['Tacos', 'Burgers', 'Sushi'];
 
 sayName.call(stacey);
 sayName.apply(stacey, fastFood);
-//Call envokes the function with the property of this
-//Apply runs the array and parses the values as arguements for the params in the function.
-//Bind returns a new function instead of envoking the function already defined.
+//Call evokes the function with the property of this
+//Apply runs the array and parses the values as arguments for the params in the function.
+
+
+//Bind returns a new function instead of evoking the function already defined.
+var newFn = sayName.bind(stacey, fastFood[0], fastFood[1], fastFood[2]);
+//new function created that you can call later
+newFn();
+
+//new Binding
+var Animal = function(color, name, type){
+    //creates this = {} and binds the values to the this keyword
+  this.color = color;
+  this.name = name;
+  this.type = type;
+};
+
+var zebra = new Animal('black and white', 'Zorro', 'Zebra');
+
+//window Binding
+var sayAge = function (){
+    //using strict mode will punish you for trying to use the window Binding keyword for this
+    'use strict';
+    console.log(this.age);
+};
+
+var me = {
+  age: 25
+};
+
+//will default to the window object so to fix it
+window.age = 35;
+sayAge();
