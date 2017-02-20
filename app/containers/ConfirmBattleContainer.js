@@ -9,6 +9,7 @@ var ConfirmBattleContainer = React.createClass({
     },
     //life cycle events in React... questions about getInitialState as one is a little strange
     getInitialState: function () {
+        console.log('getInitialState');
         return {
             //Notice that the component must have an initalState loaded to reflect the loading view when its triggered
             isLoading: true,

@@ -9,6 +9,7 @@ var Home = require("../components/Home");
 var PromptContainer = require('../containers/PromptContainer');
 var ConfirmBattleContainer = require('../containers/ConfirmBattleContainer');
 
+//This is the area where you set up routes and components related with routes
 var routes = (
     <Router history={hashHistory}>
         <Route path='/' component={Main}>
