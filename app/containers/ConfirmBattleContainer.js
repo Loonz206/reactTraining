@@ -12,7 +12,7 @@ var ConfirmBattleContainer = React.createClass({
         return {
             //Notice that the component must have an initalState loaded to reflect the loading view when its triggered
             isLoading: true,
-            playerInfo: []
+            playersInfo: []
         }
     },
     componentWillMount: function (){
@@ -25,7 +25,7 @@ var ConfirmBattleContainer = React.createClass({
             .then(function (players){
                 this.setState({
                     isLoading: false,
-                    playerInfo: [players[0], players[1]]
+                    playersInfo: [players[0], players[1]]
                 })
             }.bind(this))
     },
@@ -39,7 +39,7 @@ var ConfirmBattleContainer = React.createClass({
         this.context.router.push({
             pathname: '/results',
             state: {
-                playerInfo: this.state.playerInfo
+                playersInfo: this.state.playersInfo
             }
         })
     },
@@ -47,8 +47,8 @@ var ConfirmBattleContainer = React.createClass({
         return (
             <ConfirmBattle
                 isLoading={this.state.isLoading}
-                onInitiateBattle={this.state.handleInitiateBattle}
-                playerInfo={this.state.playerInfo} />
+                onInitiateBattle={this.handleInitiateBattle}
+                playersInfo={this.state.playersInfo} />
         );
     }
 });

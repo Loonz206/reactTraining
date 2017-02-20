@@ -1,6 +1,9 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var styles = require('../styles');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
+var UserDetails = require('./UserDetails');
 
 function puke (object) {
     return <pre>{JSON.stringify(object, null, ' ')}</pre>
@@ -15,19 +18,25 @@ function ConfirmBattle(props) {
             <div className="col-sm-8 col-sm-offset-2">
                 <div className="col-sm-6">
                     <p className="lead">Player 1</p>
-                    {puke(props.playerInfo[0])}
+                    <UserDetails info={props.playersInfo[0]} />
                 </div>
                 <div className="col-sm-6">
                     <p className="lead">Player 2</p>
-                    {puke(props.playerInfo[1])}
+                    <UserDetails info={props.playersInfo[1]} />
                 </div>
             </div>
             <div className="col-sm-8 col-sm-offset-2">
                 <div className="col-sm-12" style={styles.space}>
-                    INITIATE BATTLE SEQUENCE
+                    <button type="button" className="btn btn-lg btn-success" onClick={props.onInitiateBattle}>
+                        Initiate Battle!
+                    </button>
                 </div>
                 <div className="col-sm-12" style={styles.space}>
-                    LINK TO /PLAYERONE
+                    <Link to='/playerOne'>
+                        <button type="button" className="btn btn-lg btn-danger">
+                            Reselect Players
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
@@ -36,7 +45,7 @@ function ConfirmBattle(props) {
 ConfirmBattle.propTypes = {
     isLoading: PropTypes.bool.isRequired,
     onInitiateBattle: PropTypes.func.isRequired,
-    playerInfo: PropTypes.array.isRequired
+    playersInfo: PropTypes.array.isRequired
 };
 
 module.exports = ConfirmBattle;
