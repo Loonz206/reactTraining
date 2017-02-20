@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 
 function puke (object) {
     return <pre>{JSON.stringify(object, null, ' ')}</pre>
