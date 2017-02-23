@@ -6,6 +6,7 @@ var UserDetailsWrapper = require('./UserDetailsWrapper');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 var MainContainer = require('./MainContainer');
+var Loading = require('./Loading');
 
 //Creating a private component only for this file so we won't export this
 function StartOver (){
@@ -22,7 +23,7 @@ function Results (props) {
 
     if(props.isLoading === true) {
         return (
-            <p> Loading ... </p>
+            <Loading />
         )
     }
 
