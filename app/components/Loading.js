@@ -23,6 +23,7 @@ var Loading = React.createClass({
         text: PropTypes.string,
         speed: PropTypes.number,
     },
+    //This is the default settings you can put on the loader if nothing is defined on the loader
     getDefaultProps: function () {
         return {
             text: 'Loading',
