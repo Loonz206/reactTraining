@@ -252,6 +252,17 @@ but if our component is used like this
 ```
 Then **this.props.text** will be 'One second' and **this.props.color** will be 'green'.
 
+###React.cloneElement Tutorial 
+
+A React Element is "a plain object describing a component instance or DOM node and its desired properties".
+That may sound very similar to what JSX is used for and that's because a React element is what JSX gets transpiled into.
+Though not used a whole lot, there are times when you'll need to clone a React element and attach new props to it.
+This looks like this,
+
+```
+React.cloneElement(FriendList, {friends: ['Jake', 'Joe']})
+```
+
 
 ![alt text][image]
 
